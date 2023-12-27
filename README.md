@@ -50,3 +50,6 @@ int main()
 }
 ```
 - Este pequño main valida que read nos devuelva un tamaño > 0  y seguira iterando hasta no tengamos nada que leer
+
+  salida del output:
+  ![image](https://github.com/nakamavg/gnl/assets/7202262/2756bdb1-072a-43c1-9393-a0a764d2632d)
