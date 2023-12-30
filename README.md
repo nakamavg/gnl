@@ -38,7 +38,7 @@ y el 2 el standar error
 - read es inteligente y cada llamada a read va a continuar donde lo dejamos 
 - read nos devuelve el tamaño de lo leido
 
-ssssssssssssssssssssssssssssssss## Main de ejemplo
+## Main de ejemplo
 
 ```c
 #include <stdio.h>
