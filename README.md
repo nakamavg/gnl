@@ -163,6 +163,16 @@ esto es por que aunque leamos siempre el tamaño del buffer tenemos que guardar 
 - newline guarda un puntero a la posicion de el salto de linea para preparar el buffer para la siguiente llamada a la funcion
 -[subir](#gnl)
 
+# Bonus
+
+La unica diferencia en el aparatado bonus es que nuestro buffer pasara a ser bidimensional  y en la cabecera incluimos una macro para el la cantidad de fd maximos que podemos usar tambien validaremos la cantidad de fd que se le pasan a la funcion sean consecuentes con ese maximo.
+
+```c 
+# ifndef OPEN_MAX
+#  define OPEN_MAX 512
+# endif
+```
+
 
 
 
