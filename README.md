@@ -74,16 +74,16 @@ int main()
 	-`stdlib.h` que contiene `malloc` `free` `NULL` `size_t` 
 	- `unistd.h` que contiene `write` `read` `close`
 
-- Tambien Definos el tamaño de nuestro buffer 
+- Tambien Definimos el tamaño de nuestro buffer 
 
 ```c
 	# ifndef BUFFER_SIZE
 	#  define BUFFER_SIZE 42
 	# endif
 ```
-- Con esta macro le decimos al programa que el tamaño que vamos a leer de los fd en cada pasada siempre va a ser 42
+- Con esta macro le decimos al programa el tamaño que vamos a leer de los fd en cada pasada, siempre va a ser 42.
 
-- En el la cabecera tambien declaro funciones hechas en libft y que van a estar dentro de el archivo [`get_next_line_utils.c`](get_next_line_utils.c) como `ft_strchr` para buscar el eol o en español salto de linea o `\n` `ft_strlen` para medir longitud de los strings, `ft_strlcpy` que copia caracteres de la cadena `src` en `dst` o `ft_strdup` que alloca memoria dinamicamente a una cadena o `ft_strjoin` que concatena dos cadenas y asigna memoria dinamicamente.
+- En la cabecera también declaro funciones hechas en libft y que van a estar dentro del archivo [`get_next_line_utils.c`](get_next_line_utils.c), como `ft_strchr` para buscar el EOL o en español, salto de línea o `\n`, `ft_strlen` para medir la longitud de los strings, `ft_strlcpy` que copia caracteres de la cadena `src` en `dst`, o `ft_strdup` que aloca memoria dinámicamente a una cadena, o `ft_strjoin` que concatena dos cadenas y asigna memoria dinámicamente.
 
 y tambien incluyo la funcion madre de `get_next_line` que se encuentra en el archivo [`get_next_line.c`](get_next_line.c)
 
@@ -165,7 +165,7 @@ esto es por que aunque leamos siempre el tamaño del buffer tenemos que guardar 
 
 # Bonus
 
-La unica diferencia en el aparatado bonus es que nuestro buffer pasara a ser bidimensional  y en la cabecera incluimos una macro para el la cantidad de fd maximos que podemos usar tambien validaremos la cantidad de fd que se le pasan a la funcion sean consecuentes con ese maximo.
+La unica diferencia en el apartado bonus es que nuestro buffer pasara a ser bidimensional  y en la cabecera incluimos una macro para la cantidad de fd maximos que podemos usar,tambien validaremos la cantidad de fd que se le pasan a la funcion sean consecuentes con ese maximo.
 ![image](https://github.com/nakamavg/gnl/assets/7202262/5ca12934-686d-45fc-8c40-f271d7b27ed4)
 
 
