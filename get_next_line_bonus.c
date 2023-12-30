@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgomez-m <aecm.davidgomez@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/29 17:18:53 by dgomez-m          #+#    #+#             */
-/*   Updated: 2023/12/30 06:51:51 by dgomez-m         ###   ########.fr       */
+/*   Updated: 2023/12/30 04:50:44 by dgomez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 void	ft_bzero(void *s, size_t n)
 {
@@ -26,9 +26,8 @@ char	*read_line(int fd, char *buf)
 	char	*line;
 	int		countread;
 
-	countread = -2;
 	line = ft_strdup(buf);
-	while (!(ft_strchr(line, '\n')) && countread != 0)
+	while (!(ft_strchr(line, '\n')))
 	{
 		countread = read(fd, buf, BUFFER_SIZE);
 		if (countread == -1)
@@ -37,6 +36,8 @@ char	*read_line(int fd, char *buf)
 			ft_bzero(buf, BUFFER_SIZE + 1);
 			return (NULL);
 		}
+		if (countread == 0)
+			break ;
 		buf[countread] = '\0';
 		line = ft_strjoin(line, buf, countread);
 	}
@@ -62,16 +63,16 @@ void	prepare_buffer(char *buf, char *line, char *newline)
 
 char	*get_next_line(int fd)
 {
-	static char	buf[BUFFER_SIZE + 1];
+	static char	buf[OPEN_MAX][BUFFER_SIZE + 1];
 	char		*line;
 	char		*newline;
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	if (fd < 0 || fd > OPEN_MAX || BUFFER_SIZE <= 0)
 		return (NULL);
-	line = read_line(fd, buf);
+	line = read_line(fd, buf[fd]);
 	if (!line || ft_strlen(line) == 0)
 		return (free(line), NULL);
 	newline = ft_strchr(line, '\n');
-	prepare_buffer(buf, line, newline);
+	prepare_buffer(buf[fd], line, newline);
 	return (line);
 }
