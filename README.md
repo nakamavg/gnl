@@ -151,12 +151,12 @@ esto es por que aunque leamos siempre el tamaño del buffer tenemos que guardar 
 
 - guardamos en line lo que nos devuelve la funcion `read_line` 
 
-## `*read_line`
+- `*read_line`
 
- - Lee una linea de el fd y alloca memoria para el string 
- - fd el archivo de donde se lee la linea.
- - buf la variable donde se guarda lo leido.
- - retorna un puntero a la linea leida, O NULL si hay un error o se ha encontrado con el final del fichero.
+ 	- Lee una linea de el fd y alloca memoria para el string 
+ 	- fd el archivo de donde se lee la linea.
+ 	- buf la variable donde se guarda lo leido.
+ 	- retorna un puntero a la linea leida, O NULL si hay un error o se ha encontrado con el final del fichero.
 
 - Comprobaciones de si no hay linea o si el tamaño de la linea es 0 
 
@@ -166,6 +166,8 @@ esto es por que aunque leamos siempre el tamaño del buffer tenemos que guardar 
 # Bonus
 
 La unica diferencia en el aparatado bonus es que nuestro buffer pasara a ser bidimensional  y en la cabecera incluimos una macro para el la cantidad de fd maximos que podemos usar tambien validaremos la cantidad de fd que se le pasan a la funcion sean consecuentes con ese maximo.
+![image](https://github.com/nakamavg/gnl/assets/7202262/5ca12934-686d-45fc-8c40-f271d7b27ed4)
+
 
 ```c 
 # ifndef OPEN_MAX
